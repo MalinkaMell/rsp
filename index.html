@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/f8020557a2.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark  justify-content-center text-white">
+    <h1><i class="fas fa-hand-rock"></i> Rock <i class="fas fa-hand-rock"></i> - <i class="fas fa-hand-scissors"></i>
+      Scissors <i class="fas fa-hand-scissors"></i> - <i class="fas fa-hand-paper"></i> Paper <i
+        class="fas fa-hand-paper"></i></h1>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="jumbotron m-2 text-center">
+          <h2>User Guess:<br></h2>
+          <h1 id="userGuess" class="bg-dark mt-3 py-2 text-uppercase text-white">
+            ^-^
+          </h1>
+          <i id="faelu" class="fas fa-hand-spock fa-10x pt-3"></i>
+
+        </div>
+      </div>
+      <div class="col-md-6 ">
+        <div class="jumbotron m-2 text-center">
+          <h2>Computer Guess:<br> </h2>
+          <h1 id="computerGuess" class="bg-dark mt-3 py-2 text-uppercase text-white">
+            ^-^
+          </h1>
+          <i id="faelc" class="fas fa-hand-spock fa-10x pt-3"></i>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div id="game" class="text-center col-md-12">
+        <h5 class="bg-success p-3">Wins: <span id="wins"></h5>
+        <h5 class="bg-warning p-3">Losses: <span id="losses"></h5>
+        <h5 class="bg-secondary p-3">Tie: <span id="tie"></h5>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ["r", "p", "s"];
+
+    var tie = 0;
+    var wins = 0;
+    var losses = 0;
+
+    // This function is run whenever the user presses a key.
+    document.onkeyup = function (event) {
+
+      // Determines which key was pressed.
+      var userGuess = event.key;
+
+      // Randomly chooses a choice from the options array. This is the Computer's guess.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+
+//Replacing names and setting font awesome icons
+      if (computerGuess === "r") {
+        document.getElementById("faelc").setAttribute("class", "fas fa-hand-rock fa-10x pt-3");
+        computerGuess = "rock";
+
+      }
+      if (computerGuess === "s") {
+        document.getElementById("faelc").setAttribute("class", "fas fa-hand-scissors fa-10x pt-3");
+        computerGuess = "scissors";
+
+      }
+      if (computerGuess === "p") {
+        document.getElementById("faelc").setAttribute("class", "fas fa-hand-paper fa-10x pt-3");
+        computerGuess = "paper";
+
+      }
+
+      if (userGuess === "r") {
+        document.getElementById("faelu").setAttribute("class", "fas fa-hand-rock fa-10x pt-3");
+        userGuess = "rock";
+
+      }
+      if (userGuess === "s") {
+        document.getElementById("faelu").setAttribute("class", "fas fa-hand-scissors fa-10x pt-3");
+        userGuess = "scissors";
+
+      }
+      if (userGuess === "p") {
+        document.getElementById("faelu").setAttribute("class", "fas fa-hand-paper fa-10x pt-3");
+        userGuess = "paper";
+
+      }
+
+
+
+
+      // Alerts the key the user pressed (userGuess).
+      alert("User guess: " + userGuess);
+
+      // Alerts the Computer's guess.
+      alert("Computer guess: " + computerGuess);
+      document.getElementById("computerGuess").textContent = computerGuess;
+      document.getElementById("userGuess").textContent = userGuess;
+
+//Here happens the game!
+      if (computerGuess === "rock" && userGuess === "rock") {
+        tie += 1;
+      }
+      if (computerGuess === "scissors" && userGuess === "sscissors") {
+        tie += 1;
+      }
+      if (computerGuess === "paper" && userGuess === "paper") {
+        tie += 1;
+      }
+
+      if (computerGuess === "paper" && userGuess === "scissors") {
+        wins += 1;
+      }
+
+      if (computerGuess === "paper" && userGuess === "rock") {
+        losses += 1;
+      }
+
+      if (computerGuess === "rock" && userGuess === "scissors") {
+        losses += 1;
+      }
+
+      if (computerGuess === "rock" && userGuess === "paper") {
+        wins += 1;
+      }
+
+      if (computerGuess === "scissors" && userGuess === "paper") {
+        losses += 1;
+      }
+
+      if (computerGuess === "scissors" && userGuess === "rock") {
+        wins += 1;
+      }
+      document.getElementById("tie").textContent = tie;
+      document.getElementById("wins").textContent = wins;
+      document.getElementById("losses").textContent = losses;
+    };
+
+
+  </script>
+
+</body>
+
+</html>
