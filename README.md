@@ -7,4 +7,4 @@ Rules for rock-paper-scissors
 * Paper: wins against rock, loses to scissors, and ties against itself.
 * Scissors: wins against paper, loses to rock, and ties against itself.
 
-_August 2019_
+_Made for University of Arizona Coding Bootcamp, Week-3, August 2019_
