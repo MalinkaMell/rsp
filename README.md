@@ -2,6 +2,8 @@
 
 ### Week 3 - Day 2 Challenge activity for Coding Bootcamp University of Arizona 
 
+[Project Demo](https://malinkamell.github.io/rsp/)
+
 Rules for rock-paper-scissors
 * Rock: wins against scissors, loses to paper, and ties against itself.
 * Paper: wins against rock, loses to scissors, and ties against itself.
